@@ -8,18 +8,33 @@ public class AppSetup : MonoBehaviour
 {
     //This is Main Camera in the Scene
     Camera m_MainCamera;
-    Light sunLight;
+    public GameObject[] planets;
+    public Light sunLight;
     public float cameraStartPos = 0.00F;
     public float sunLightPos = 0.00F;
-    
+    int indexingArray;
+    Vector3 camPos;
+    Vector3 camRot;
+    int spawnValue = 1199;
+    int count;
+    int i;
+
+    private GameObject[] instatiateObjects;
+
     void Start()
     {
         //This gets the Main Camera from the Scene
         m_MainCamera = Camera.main;
         //This enables Main Camera
         m_MainCamera.enabled = true;
-        sunLight.enabled = true;
-        
+        camPos = m_MainCamera.transform.position;
+
+        instatiateObjects = new GameObject[planets.Length];
+        Debug.Log("Array length: " + planets.Length);
+        indexingArray = 0;
+        Debug.Log("indexingArray Array: " + indexingArray);
+        i = 0;
+        count = 0;
     }
 
 
@@ -28,14 +43,34 @@ public class AppSetup : MonoBehaviour
 
     void Update()
     {
-
-        cameraStartPos = cameraStartPos + 0.005F;
+        count++;
+        camRot = m_MainCamera.transform.position;
+        cameraStartPos = cameraStartPos + 0.1F;
         transform.eulerAngles = new Vector3(0, cameraStartPos, 0);
+        camRot = transform.eulerAngles;
 
-        sunLightPos = sunLightPos + 0.005F;
-        sunLight.transform.rotation = Quaternion.Euler(transform.eulerAngles.x,
-                                      transform.eulerAngles.y + 0.005f,
-                                      transform.eulerAngles.z);
+        // sunLight.transform.eulerAngles = new Vector3(0, sunLightPos, 0);
+        sunLightPos = sunLightPos + 0.1F;
+        sunLight.transform.eulerAngles = new Vector3(0, sunLightPos, 0);
+        Debug.Log("Count: " + count);
+
+        if (count == spawnValue)
+        {
+            SpawnPlanets();
+        }
+        
+    }
+
+    void SpawnPlanets()
+    {
+        
+        
+        Debug.Log("Value of i: " + i);
+        
+        instatiateObjects[i] = Instantiate(planets[i]) as GameObject;
+        instatiateObjects[i].transform.eulerAngles = new Vector3(31458, 462, 77123);
+        Debug.Log("Planets: " + planets[i]);
+        i++;
 
     }
 }

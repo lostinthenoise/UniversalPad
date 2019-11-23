@@ -7,6 +7,14 @@ TagManager:
   - loadfiledropdowntag
   - Enemy
   - btnDecrypt
+  - Mercury
+  - Venus
+  - Earth
+  - Mars
+  - Jupiter
+  - Saturn
+  - Uranus
+  - Neptune
   layers:
   - Default
   - TransparentFX
