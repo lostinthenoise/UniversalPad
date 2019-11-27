@@ -9,6 +9,7 @@ public class BtnHelp : MonoBehaviour
     public TMP_InputField tmpDaInputField;
     public string txtToPutBack;
 
+    // FIXED THE HELP BUTTON DO NOT MODIFY
     public void ShowHelp()
     {
         string help = "Hello, hope you're enjoying UniversalPad.\n" +
@@ -22,25 +23,34 @@ public class BtnHelp : MonoBehaviour
             "Now try out the Esc key.\n" +
             "The ESC key will clear the text field as well for a 'Quick Clear' of any information.";
 
-        if (tmpDaInputField.text != "")
+        if(tmpDaInputField.text == "")
         {
-            txtToPutBack = tmpDaInputField.text;
+            Debug.Log("");
+            tmpDaInputField.text = help;
+        }
+        else if(tmpDaInputField.text == help && txtToPutBack.Length == 0)
+        {
             tmpDaInputField.text = "";
         }
+        else if (tmpDaInputField.text != help && tmpDaInputField.text != "")
+        {
+            txtToPutBack = tmpDaInputField.text;
+            tmpDaInputField.text = help;
+        }
+        else if (tmpDaInputField.text == help && txtToPutBack.Length > 0)
+        {
+            tmpDaInputField.text = txtToPutBack;
+        }
 
-        tmpDaInputField.text = help;
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            tmpDaInputField.text = "";
-
-            if (txtToPutBack.Length > 0)
-            {
-                tmpDaInputField.text = txtToPutBack;
-            }
+           
+           tmpDaInputField.text = "";
+            txtToPutBack = "";
 
         }
     }
