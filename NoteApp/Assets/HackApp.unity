@@ -6076,8 +6076,6 @@ GameObject:
   - component: {fileID: 1523004169}
   - component: {fileID: 1523004170}
   - component: {fileID: 1523004168}
-  - component: {fileID: 1523004171}
-  - component: {fileID: 1523004173}
   m_Layer: 0
   m_Name: SceneController
   m_TagString: Untagged
@@ -6104,6 +6102,7 @@ MonoBehaviour:
   btnDecrypt: {fileID: 1504563049}
   txtFileInfo: {fileID: 340056842}
   canvas2: {fileID: 193817924}
+  daStrPath: 
 --- !u!4 &1523004159
 Transform:
   m_ObjectHideFlags: 0
@@ -6161,10 +6160,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   txtOutput: {fileID: 1066169230}
   saveAnim: {fileID: 1066169230}
+  a: {fileID: 278748626}
   tmpInputField: {fileID: 981580404}
   ipfSaveFileAs: {fileID: 395742253}
   time: 
   date: 
+  daStrPath: 
+  script: {fileID: 1523004158}
   canvas2: {fileID: 193817924}
   canvas3: {fileID: 1657598346}
 --- !u!114 &1523004163
@@ -6299,21 +6301,6 @@ MonoBehaviour:
   canvas5: {fileID: 1329489589}
   delDaKeys: {fileID: 1739411718}
   cancelDeleOperation: {fileID: 1280882226}
---- !u!114 &1523004171
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1523004157}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbb91c7c27f244956b37e6af7eab3f7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spaceShip: {fileID: 1606590968}
-  lastPos: {x: 0, y: 0, z: 0}
-  animator: {fileID: 0}
 --- !u!114 &1523004172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6330,25 +6317,6 @@ MonoBehaviour:
   sunLight: {fileID: 407233932}
   cameraStartPos: 0
   sunLightPos: 0
---- !u!95 &1523004173
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1523004157}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f45ad3d4e66a44903a6daab3f50e9138, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1533884115
 GameObject:
   m_ObjectHideFlags: 0
@@ -6645,9 +6613,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbb91c7c27f244956b37e6af7eab3f7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spaceShip: {fileID: 1606590968}
-  lastPos: {x: 0, y: 0, z: 0}
-  animator: {fileID: 1606590970}
 --- !u!1 &1657598345
 GameObject:
   m_ObjectHideFlags: 0

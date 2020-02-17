@@ -11,24 +11,29 @@ public class BtnSaveFile : MonoBehaviour
   
     public GameObject txtOutput;
     public GameObject saveAnim;
+  
     public TMP_InputField tmpInputField;
     public TMP_InputField ipfSaveFileAs;
     public string time, date;
     string fSaved = "File Saved";
     string nToSave = "Nothing to Save";
     string enterFileName = "Enter File Name";
-
+    
+    public BtnLoadFile script;
 
     public CanvasGroup canvas2;
     public CanvasGroup canvas3;
 
     public void Apply()
     {
-        canvas3.alpha = 1f;
-        canvas3.interactable = true;
-        canvas3.blocksRaycasts = true;
-        string filePath = ipfSaveFileAs.text;
-        SaveText(filePath);
+        
+            canvas3.alpha = 1f;
+            canvas3.interactable = true;
+            canvas3.blocksRaycasts = true;
+            string filePath = ipfSaveFileAs.text;
+            SaveText(filePath);
+      
+        
     }
 
     public void SaveText(string filePath)
@@ -73,6 +78,7 @@ public class BtnSaveFile : MonoBehaviour
         }
 
     }
+
 
     public void ShowSuccess()
     {

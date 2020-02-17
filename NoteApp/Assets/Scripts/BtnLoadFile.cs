@@ -20,6 +20,7 @@ public class BtnLoadFile : MonoBehaviour
 
     public CanvasGroup canvas2;
     List<string> textToSelect = new List<string>() { };
+    public string daStrPath;
 
     // fixed...Dropdown now refreshes with simple for loop in the Apply()
 
@@ -80,6 +81,7 @@ public class BtnLoadFile : MonoBehaviour
         index = loadFileDropDown.value;
         // read the file
         tmpInputField.text = File.ReadAllText(textToSelect[index]);
+        daStrPath = textToSelect[index];
 
         creation = File.GetCreationTime(textToSelect[index]);
         txtFileInfo.text = creation.ToString();
